@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "Hello world world Hello Hello";
+        document.write(str.search("Hello" +"<br>"));
+        document.write(str.replace("Hello","hello" +"<br>"));
+        document.write(str.search(/hello/i +"<br>"));
+        
+        document.write(str.replace(/hello/i,"hello"+ "<br>"));
+        
+        document.write(str.replace(/Hello/ig,"hello" +"<br>"));
+        
+
+    </script>
+</body>
+</html>
