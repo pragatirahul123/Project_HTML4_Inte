@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>error-throe expections</title>
+</head>
+<body>
+    <input id="demo" type="text"/>
+    <button tyoe="button" onclick="myFunction()">Test input</button>
+    <p id="message"></p>
+    <script>
+        function myFunction(){
+        var x;
+        try{
+            var x=document.getElementById("demo").value;
+
+            if(x=="") throw "input is empty";
+            if(isNaN(x)) throw "input is Not a number";
+            x=Number(x);
+            if(x<5) throw "input is too low";
+            if(x>10) throw "input is too high"
+        }
+        catch(err){
+
+            document.getElementById("message").innerHTML=err;
+        }
+        finally{
+
+            if(x>=5 && x<=10){
+                document.getElementById("message").innerHTML="Input is right";
+            };
+        }
+    }
+    </script>
+</body>
+</html>
