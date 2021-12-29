@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const employee = {
+            name:"Mona",
+            surname :"Rahul",
+            age :23,
+            class :"ix"
+        }
+        delete employee.class;
+        console.log(employee);
+
+
+        //OR 
+        const employee1 = {
+            name:"Mona",
+            surname :"Rahul",
+            age :23,
+            class :"ix"
+        }
+        delete employee1["age"];
+        console.log(employee1);
+
+
+
+        //Methods
+
+        const employee2 = {
+            name:"jiya" ,
+            surname : "Rahul",
+            id :233,
+            fullname:function(){
+                return this.name + " " + this.surname;
+            }
+        }
+        console.log(employee2);
+
+
+
+    </script>
+</body>
+</html>
