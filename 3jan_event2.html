@@ -7,8 +7,16 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Event Handling With Javascript</h1>
+    <button id ="mybtn">Click Me</button>
+
     <script>
-        document.write("Happy New Year");
+        var btn = document.getElementById("mybtn");
+        console.log(btn);
+        btn.onclick = function() { alert("Button Clicked");};
+            
+        
     </script>
+
 </body>
 </html>

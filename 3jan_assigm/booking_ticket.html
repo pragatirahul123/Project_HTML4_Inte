@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	
+	<form name="totalform">
+<fieldset>
+	<legend>Booking Details</legend>
+		Movie :<select>
+			<option value="selected ">select</option>
+			<option>movie1</option>
+			<option>movie2</option>
+			<option>movie3</option>
+
+		</select>
+		<br>
+		<br>
+		Theaters :<select>
+			<option value="selected ">select</option>
+			<option>Theater1</option>
+			<option>Theater2</option>
+			<option>Theater3</option>
+		</select>
+		<br>
+		<br/>
+		Date :<input type="date" id="mydate">
+		<br>
+		<br>
+		 Email :<input type="text"> 
+		
+		<br>
+		<br>
+		Tickets :<input type="Number" id="ticket">
+		<br>
+		<br>
+		Total Price :<input type=" " id="res1">
+
+
+		<br>
+		<br>
+		<input type="button" value="Total price" onclick="BookTicket()">
+
+
+		</fieldset>
+
+	</form>
+	<br>
+				Per Ticket price=100.00 Rupees.
+<br><br>
+	Discounts :
+	<br><br>
+					10% discount if number of booked shows  >= 10 
+
+
+	<script type="text/javascript">
+		const tic=100;
+		function BookTicket()
+		{
+			var num=document.getElementById('ticket').value;
+		    var response=tic*num;
+		document.totalform.res1.value=response;
+	    }
+
+
+
+	</script>
+
+
+
+</body>
+</html>
