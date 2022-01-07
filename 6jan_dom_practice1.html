@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree</title>
+</head>
+<body>
+
+    <h1 id ="myid" >We are Learning JS</h1>
+    <p id ="myid1" >I am Paraghraph</p>
+
+    <script>
+        document.write("---------------DOCUMENT---------------<br>");
+        document.write(document.nodeName + "<br>");
+        document.write(document.nodeValue + "<br>");
+        document.write(document.nodeType + "<br>");
+        console.log(document.nodeName + "<br>");
+        console.log(document.nodeValue + "<br>");
+        console.log(document.nodeType + "<br>");
+
+
+        //Text 
+
+        document.write("---------- Text -------------<br>");
+        var txt = document.getElementById("myid");
+        document.write(txt.firstChild.nodeName + "<br>");
+        document.write(txt.firstChild.nodeValue + "<br>");
+        document.write(txt.firstChild.nodeType + "<br>");
+
+
+
+        //element
+
+        document.write("----------- Element ------------------>br>");
+        var elm = document.getElementById("myid");
+        console.log(elm);
+        document.write(elm.nodeName +"<br>");
+        document.write(elm.nodeValue +"<br>");
+        document.write(elm.nodeType +"<br>");
+        console.log(elm.nodeName );
+        console.log(elm.nodeValue );
+        console.log(elm.nodeType );
+       
+
+        //Text 
+        document.write("-----------Text ------------<br>");
+        var txt = document.getElementById("myid");
+        document.write(txt.firstChild.nodeName + "<br>");
+        document.write(txt.firstChild.nodeValue + "<br>");
+        document.write(txt.firstChild.nodeType + "<br>");
+
+    //comment
+
+    document.write("---------comment -------<br>");
+    var cmt = document.getElementById("myid");
+        console.log(cmt);
+        document.write(cmt.firstChild.nextSibling.nodeName +"<br>");
+        document.write(cmt.firstChild.nextSibling.nodeValue +"<br>");
+        document.write(cmt.firstChild.nextSibling.nodeType +"<br>");
+        console.log(cmt.firstChild.nextSibling.nodeName );
+        console.log(cmt.firstChild.nextSibling.nodeValue );
+        console.log(cmt.firstChild.nextSibling.nodeType);
+
+
+
+    document.write("--------------------Text value Access----------------<br>")
+       
+
+
+
+    </script>
+    
+</body>
+</html>
