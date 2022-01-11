@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<title>
+    Tree
+</title>
+<body>
+    <h1 id ="myid">
+        We are Learning JS
+    </h1>
+    <p id ="myid1">I am Paraghraph</p>
+    <span>I am a span</span> I am paraghraph</p>
+
+    <script>
+        var result = document.getElementById("myid");
+        console.log(result.childNodes);
+        console.log(result.lastChild.previousSibling);
+        console.log(result.children);
+        console.log(result.lastElementChild.previousSibling);
+        result.lastElementChild.previousSibling.textContent = "I  am learning Dom"
+
+
+
+
+      
+    </script>
+    
+</body>
+</html>
