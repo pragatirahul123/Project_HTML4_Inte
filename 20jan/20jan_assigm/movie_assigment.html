@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movie</title>
+<style>
+        .divvv
+    {
+    border-radius: 25px; border-color: black; background-color: black; padding: 10px; height: 9px; position:inherit; margin-top: 20px;    margin-left: 20px;
+    }
+
+
+
+.star{
+    font-size: 30px;
+    color: skyblue;
+    display: inline-block;
+}
+
+.over{
+    color:lawngreen;
+}
+
+.fix{
+    color: orange;
+}
+ .rating{
+     margin: 30px 0;
+     font-weight: bold;
+}
+</style>
+</head>
+<body>
+    <fieldset align="center" padding: "10px"; height: "9px"; position:"inherit"; margin-top: "20px";    margin-left: "20px";>
+    <h1 id="myh1"> Welcome To <span id="span">Movie Ratings</span> </h1>
+    <h1 id="myp">Please Rate the <span id="myspan"> Movie</span> </h1>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/> 
+
+    <ul class="text-center">
+      <li class="star"><i class="fa fa-star" title="Rate 5"></i></li>
+      <li class="star"><i class="fa fa-star" title="Rate 4"></i></li>
+      <li class="star"><i class="fa fa-star" title="Rate 3"></i></li>
+      <li class="star"><i class="fa fa-star" title="Rate 2"></i></li>
+      <li class="star"><i class="fa fa-star" title="Rate 1"></i></li>
+    </ul>
+
+    <div class="divv">
+        <input type="text" class="divvv" name=""  id="value"/>
+    </div>
+    </fieldset>
+
+       <script>       
+           document.getElementById('myh1').style.color = 'skyblue';
+           document.getElementById('myp').style.color = 'skyblue';
+           document.getElementById('span').style.color = 'red';
+           document.getElementById('myspan').style.color = 'red';
+ 
+            const stars = document.querySelectorAll(".star");
+            const rating = document.querySelector(".rating");
+
+            for(let i=0; i< stars.length; i++){
+                stars[i].starsValue = (i + 1);
+                ["mouseover","mouseout","click"].forEach(function(e){
+                    stars[i].addEventListener(e,starRating);
+                })
+            }
+
+            function starRating(e){
+                let type = e.type;
+                let starsValue = this.starsValue;
+                if(type === "click"){
+                    if (starsValue > 5){
+                        rating.innerHTML = "you rated this" + starsValue + "stars";
+                    }
+                }
+                stars.forEach(function(ele, ind){
+                    if (type === "click"){
+                        if(ind < starsValue){
+                            ele.classList.add("fix");
+                
+                        }
+                        else{
+                            ele.classList.remove("fix");
+                        }
+                    }
+                    if (type === "mouseover"){
+                        if(ind < starsValue){
+                            ele.classList.add("over");
+                        }
+                        else{
+                            ele.classList.remove("over");
+                        }
+                    }
+                    if (type === "mouseout"){
+                        ele.classList.remove("over");
+                        }
+                })
+
+            }
+       </script>
+</body>
+</html>
