@@ -1,0 +1,32 @@
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script> 
+    
+</head>
+<body>
+
+</body>
+
+<script>
+    $(function () {
+        var jsons = [
+            { "id": 101, "name": 'Pen', "decription": "Red colour" },
+            { "id": 102, "name": 'Notebook', "decription": "Blue colour" },
+            { "id": 103, "name":  "Book"   ,"decription":"Yellow colour" },
+            { "id": 104, "name": 'Eraser', "decription":"White colour" },
+            { "id": 105, "name": 'Pencil', "decription": "Black colour" }
+        ]
+
+        var $table = $("<table border='1'></table>"); 
+        $table.append("<tr><th>id</th><th>name</th><th>decription</th></tr>"); 
+        $.each(jsons, function (index, ele) {  
+            
+          
+            $table.append("<tr><td>" + ele.id + "</td><td>" + ele.name + "</td><td>" + ele.decription +"</td></tr>")
+        })
+        // insert the table to the body of html
+        $("body").append($table);
+    })
+</script>
+
