@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<body>
+    <h1> How to trace location</h1>
+    <button onclick="geoLocation()">Get Location</button>
+    <div id ="output"></div>
+
+
+    <script type="text/javascript">
+        var x = document.getElementById('output');
+
+        function geoLocation(){
+            if(navigator.geolocation){
+                x.innerHTML="Supporting !!!";
+                navigator.geolocation.getCurrentPosition(showPosition,showError);
+            }else{
+                x.innerHTML ="Not Supporting!!!";
+            }
+        }
+
+        function showPosition(position) {
+            var localAPI = "http://maps.googleapis.com/maps/api/geocode/json?latlng="+ position.coords.latitude +","+position.coords.longitude+"&sensor=true";
+            x.innerHTML = localAPI;
+            $.get({
+                url:localAPI,
+                success:function(data){
+                    console.log(data);
+
+            x.innerHTML = data.results[0].address_components[4].long_name+",";
+            x.innerHTML = data.results[0].address_components[5].long_name+",";
+            x.innerHTML = data.results[0].address_components[6].long_name+",";
+                }
+            })
+        }
+
+        function showError(error){
+
+            switch(error.code){
+                case error.PERMISSION_DENIED:
+                    x.innerHTML = "User denied the request for Geolocation."
+                    break;
+                
+                case error.POSITION_UNAVAILABLE:
+                    x.innerHTML = "Location information is unavailable."
+                    break;
+
+                case error.TIMEOUT:
+                    x.innerHTML = "The request to get user location timed out."
+                    break;
+
+                case error.UNKNOWN_ERROR:
+                    x.innerHTML = "An unknown error occurred."
+                    break;
+                
+            }
+        }
+    </script>
+</body>
+</html>
