@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+       
+        var dateObject = new Date();
+        var month = dateObject.getUTCMonth() + 1 ; //return ineteger value 0 to 11 so like 0 means Jan month that's why i add + 1
+        var day = dateObject.getUTCDate();
+        var year = dateObject.getUTCFullYear();
+
+        newdate = year + "-" + month + "-" + day;
+        document.write(newdate);
+        //console.log(newdate);
+</script>
+   
+    
+</body>
+</html>
