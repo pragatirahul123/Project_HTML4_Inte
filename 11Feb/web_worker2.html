@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type ="button" onclick="bigLoop()"  value="Big Loop"/>
+    <input type="button"  onclick="sayHello();"  value="Say Hello" />
+    <script>
+        function bigLoop(){
+            for(var i =0;i<=1000;i++){
+                var j=i;
+            }
+            alert("completed" + j+"iterations");
+        }
+        function sayHello(){
+            alert("Hello world....");
+        }
+    </script>
+</body>
+</html>
