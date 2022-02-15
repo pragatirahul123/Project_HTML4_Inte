@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;    
+        }
+        #shoppingList{
+            border: 2px solid black;
+            margin: 30px 0 0 0 0;
+        }
+    </style>
+<script>
+    var  txtItemCity, txtItemName, txtItemEmail, list;
+    var shoppingItems;
+    function ShoppingItem(itmName,itmCity,itmEmail)
+    {
+        //this.itemId=itmId;
+        this.itemName=itmName;
+        this.itemCity=itmCity;
+        this.itemEmail=itmEmail;
+    }
+    shoppingItems=[
+        // new ShoppingItem(10,"marker",50,5),
+        // new ShoppingItem(20,"cellphone",10000,1)
+    ]
+
+    function loadItems()
+    {
+        str="";
+        for(var i=0; i<shoppingItems.length;i++)
+        {
+            console.log(shoppingItems);
+            // console.log(shoppingItems[i].itemId);
+
+            str+= "<li>" + shoppingItems[i].itemName + " * " + shoppingItems[i].itemCity + " * " +shoppingItems[i].itemEmail + "</li>";
+        }
+        list.innerHTML=str;
+    }
+
+    function btnNewClick()
+    {
+        
+        txtItemName.value=" ";
+        txtItemEmail.value=" ";
+        txtItemCity.value=" ";
+        txtItemEmail.focus();
+    }
+
+    function btnSaveClick(){
+        shoppingItems.push(new ShoppingItem( txtItemName.value, txtItemCity.value, txtItemEmail.value));
+        loadElements();
+        console.log(shoppingItems);
+    }
+
+    function loadElements(){
+        txtItemCity=document.getElementById("txtItemCity");
+        txtItemName=document.getElementById("txtItemName");
+        txtItemEmail=document.getElementById("txtItemEmail");
+        // txtItemQty=document.getElementById("txtItemQty");
+        list=document.getElementById("list");
+        loadItems();
+    }
+     
+    function btnUpdateClick(){
+        for (var i=0; i<shoppingItems.length; i++)
+        {
+            if (shoppingItems[i].itemEmail==txtItemEmail.value)
+            {
+                shoppingItems[i].itemName=txtItemName.value;
+                shoppingItems[i].itemEmail=txtItemEmail.value;
+                shoppingItems[i].itemCity=txtItemCity.value;
+                break;
+
+            }
+        }
+        loadElements();
+    }
+    function btnDeleteClick(){
+        for (var i=0;i<shoppingItems.length;i++){
+            if(shoppingItems[i].itemEmail==txtItemEmail.value){
+                shoppingItems.splice(i,1);
+                break;
+            }
+        }
+        loadElements();
+    }
+
+</script>
+</head>
+<body onload="loadElements()">
+    <h1>form</h1>
+    <hr>
+    <div id="shoppingList">
+        <div>
+            <label for="txtItemName">Name:</label>
+            <input type="text" id="txtItemName">
+        </div>
+       
+        <div>
+            <label for="txtItemCity">City:</label>
+            <input type="text" id="txtItemCity">
+        </div>
+        <div>
+            <label for="txtItemEmail">Email:</label>
+            <input type="text" id="txtItemEmail">
+        </div>
+        <div>
+            <input type="button" value="New" onclick="btnNewClick()">
+            <input type="button" value="Save" onclick="btnSaveClick()">
+            <input type="button" value="Update" onclick="btnUpdateClick()">
+            <input type="button" value="Delete" onclick="btnDeleteClick()">
+        </div>
+        <div>
+            <ul id="list"></ul>
+        </div>
+    </div>
+</body>
+</html>
