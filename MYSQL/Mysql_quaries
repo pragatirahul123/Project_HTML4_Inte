@@ -1,0 +1,25 @@
+ 
+
+ show databases;
+
+ create database(database_name)
+
+ Drop database(database_name)
+
+ create table (table_name)
+
+ desc (table_name)
+
+ Insert INTO (table_name)
+    Values
+
+select*from(table_name)
+
+
+update(table_name)
+SET city="pune";
+WHERE(condition)  id=1
+
+
+Delete FROM (table_name);
+DELETE FROM employee;
