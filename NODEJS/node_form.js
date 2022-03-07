@@ -1,0 +1,23 @@
+var http = require("http");
+http.createServer((req,res)=>{
+
+    res.writeHead(200,{"content-type":"text/html"});
+    // res.write("<h1>Hello Mona!!!!</h1>");
+    if(req.method==="GET" && req.url==="/node"){
+
+        res.write("<form method = 'POST' action ='angular'> <div> Enter Name");
+        res.write("<input type=text name='txtName'/> </div>");
+        res.write("<div><input type=submit value ='send data'></div></form>");
+    }
+    if(req.method==="GET" && req.url === "/angular"){
+        res.write("<h1>This is GET  for Angular URL </h1>");
+    }
+    res.end();
+
+}).listen(9000);
+console.log("server is runnning on 4000");
+
+
+
+
+
